@@ -37,6 +37,11 @@
                 align-content: center;
                 width: 100%;
             }
+            p {
+                width: 75%;
+                margin: auto;
+                text-align: center;
+            }
             div {
                 margin: auto;
             }
@@ -58,9 +63,23 @@
                 font-family: Arial, Helvetica, sans-serif;
                 transition: all ease-in-out .1s;
             }
+            .gitlink {
+                background-color: cornflowerblue;
+            }
             button:hover {
                 background-color: rgb(60, 60, 60);
                 color: springgreen;
+            }
+            img {
+                width: 100%;
+            }
+            .imgframe {
+                height: 300pt;
+                overflow: hidden;
+            }
+            .gitmark {
+                height: 11pt;
+                vertical-align: center;
             }
             @media only screen and (max-width: 600px) {
                 html {
@@ -79,7 +98,10 @@
             }
         </style>
         <script>
-
+            expandbutton = getElementById('expand');
+            expandbutton.onclick = function(){
+                alert("poop");
+            };
         </script>
     </head>
     <header>
@@ -87,9 +109,12 @@
         <h3>I make programs and programming things.</h3>
     </header>
     <body>
-        <iframe src="http://teknowafel.github.io/statyc-py/" frameborder="0" scrolling="no" loading="lazy"></iframe>
+        <div class="imgframe">
+            <img id="statycimg" src="/statyc.png">
+        </div>
         <div class="info">
-            <span><h4>statyc-py</h4></span><span><button id="expand">expand</button></span>
+            <p>A fast and simple-to-use static site generator for blogs and similar websites. Read more at the repo below.</p>
+            <span><h4>statyc-py</h4></span><span><button id="expand">expand</button><button class="gitlink"><img class="gitmark" src="/gitmark.png"></button></span>
         </div> 
     </body>
     <footer>
