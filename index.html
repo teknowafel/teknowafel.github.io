@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html id="html">
     <head>
         <title>t e k n o w a f e l</title>
         <meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
         <style>
             html {
-                width: 50%;
-                margin: auto;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 transition: all ease-in-out 0.5s;
+                overflow-x: hidden;
+                overflow-y: visible;
+                transition: all ease-in-out 0.5s;
+                margin-left: 5%;
+                margin-right: 5%;
             }
 
             h1 {
@@ -74,12 +77,16 @@
                 width: 100%;
             }
             .imgframe {
-                height: 300pt;
                 overflow: hidden;
+                width: 75%;
             }
             .gitmark {
                 height: 11pt;
                 vertical-align: center;
+            }
+            #statycImgFrame {
+                max-height: 300pt;
+                transition: all ease-in-out 0.5s;
             }
             @media only screen and (max-width: 600px) {
                 html {
@@ -98,10 +105,15 @@
             }
         </style>
         <script>
-            expandbutton = getElementById('expand');
-            expandbutton.onclick = function(){
-                alert("poop");
-            };
+            function expandStatyc () {
+                const statycImgFrame = document.getElementById("statycImgFrame");
+                statycImgFrame.style.maxHeight = '100vh';
+                const html = document.getElementById("html");
+                html.style.overflowY = "hidden";
+                html.style.maxHeight = "10vh";
+                html.style.marginLeft= "100vw";
+                setTimeout(function () { window.location.href = "http://teknowafel.github.io/statyc-py/" }, 650);
+            }
         </script>
     </head>
     <header>
@@ -109,12 +121,12 @@
         <h3>I make programs and programming things.</h3>
     </header>
     <body>
-        <div class="imgframe">
+        <div class="imgframe" id="statycImgFrame">
             <img id="statycimg" src="/statyc.png">
         </div>
         <div class="info">
             <p>A fast and simple-to-use static site generator for blogs and similar websites. Read more at the repo below.</p>
-            <span><h4>statyc-py</h4></span><span><button id="expand">expand</button><button class="gitlink"><img class="gitmark" src="/gitmark.png"></button></span>
+            <span><h4>statyc-py</h4></span><span><button class="expand" onclick="expandStatyc()">expand</button><button class="gitlink"><img class="gitmark" src="/gitmark.png"></button></span>
         </div> 
     </body>
     <footer>
